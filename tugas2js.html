@@ -1,0 +1,38 @@
+<script>
+
+    let pengawai = "Ridwan"
+    let jabatan = "Manager"
+    let usia = 30;
+    let tunjangan_jabatan = 0.15; // Tunjangan Jabatan: 15% dari gapok 
+    let bpjs = 0.1; // BPJS: 10% dari gapok 
+    
+    switch(jabatan){
+        case 'Manager' : hasil_gaji_pokok = 15000000; break;
+        case 'Asisten Manager' : hasil_gaji_pokok = 10000000; break;
+        case 'Staff' : hasil_gaji_pokok = 5000000; break;
+        default : hasil_gaji_pokok = 0;
+    }
+
+    let bruto_tunjangan_jabatan = hasil_gaji_pokok * tunjangan_jabatan;
+    let bruto_bpjs = hasil_gaji_pokok * bpjs;
+
+    // Tunjangan Keluarga (ternary): dilihat dari status yg sudah menikah =>20% dari gapok 
+    let status_tunjangan_keluarga = (usia >= 25 ) ? "Menikah" : "Tidak Menikah";
+    
+    if(status_tunjangan_keluarga == "Menikah") bruto_tunjangan_keluarga = 0.2 * hasil_gaji_pokok;
+    else if (status_tunjangan_keluarga == "Tidak Menikah") bruto_tunjangan_keluarga = 0;
+    else status = 0;
+
+    let hasil_gaji = bruto_tunjangan_jabatan + bruto_bpjs + bruto_tunjangan_keluarga;
+
+    document.write("<h1> Data Pengawai </h1>");
+    document.write("<br> Pegawai : " + pengawai + 
+                   "<br> Usia : " + usia + 
+                   "<br> Jabatan : " + jabatan + 
+                   "<br> Status : " + status_tunjangan_keluarga + 
+                   "<br> Gaji Pokok : " + hasil_gaji_pokok + 
+                   "<br> Tunjangan Jabatan : " + bruto_tunjangan_jabatan +
+                   "<br> BPJS : " + bruto_bpjs +
+                   "<br> Tunjangan Keluarga  : " + bruto_tunjangan_keluarga +
+                   "<br> Total Gaji : " + hasil_gaji);
+</script>
