@@ -1,0 +1,102 @@
+<script>
+
+    let p1 = {"nama" : "Abimanyu", nilai : 100, akses : 15};
+    let p2 = {"nama" : "Adipramana", nilai : 100, akses : 5};
+    let p3 = {"nama" : "Aditya", nilai : 75, akses : 15};
+    let p4 = {"nama" : "Adiwangsa", nilai : 75, akses : 5};
+    let p5 = {"nama" : "Andaru", nilai : 75, akses : 15};
+    let p6 = {"nama" : "Ardianto", nilai : 50, akses : 5};
+    let p7 = {"nama" : "Arya", nilai : 50, akses : 15};
+    let p8 = {"nama" : "Apta", nilai : 50, akses : 5};
+    let p9 = {"nama" : "Astaguna", nilai : 25, akses : 10};
+    let p10 = {"nama" : "Aswangga", nilai : 25, akses : 5};
+
+    let pegawai = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10];
+
+</script>
+
+<table style="padding: 10; text-align: center; width: 100%;">
+    
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Jabatan</th>
+            <th>Agama</th>
+            <th>Gaji pokok</th>
+            <th>Tunjangan Jabatan</th>
+            <th>Tunjangan Kesehatan</th>
+            <th>Gaji Kotor</th>
+            <th>Zakat Profesi</th>
+            <th>Take Home Pay</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <script>
+
+            // Diketahui ada 10 orang pegawai dengan nama Pegawai1 s/d Pegawai10:
+            // Gunakan If multikondisi untuk menentukan jabatan: 
+            // - Pegawai1 s/d Pegawai2 jabatan manager, gapok 15jt
+            // - Pegawai3 s/d Pegawai5 jabatan asisten manager, gapok 10jt 
+            // - Pegawai6 s/d Pegawai8 jabatan supervisor, gapok 7jt
+            // - Pegawai9 s/d Pegawai10 jabatan staff, gapok 4jt
+            // Untuk Gapok gunakan switch case
+
+            var no = 1;
+            for (p of pegawai){
+                if(p.nilai > 85 && p.nilai < 110 ) jabatan = "Manager";
+                else if (p.nilai > 60 && p.nilai < 85) jabatan = "Asisten Manager";
+                else if (p.nilai > 35 && p.nilai < 60) jabatan = "Supervisor";
+                else if (p.nilai >= 10 && p.nilai < 35) jabatan = "staff";
+                else jabatan = " ";
+
+                switch(jabatan){
+                    case "Manager" : gapok = 15000000; break;
+                    case "Asisten Manager" : gapok = 10000000; break;
+                    case "Supervisor" : gapok = 7000000; break;
+                    case "staff" : gapok = 4000000; break;
+                    default : gapok = 0; break;
+                }
+            
+                // Dari Gapok Tentukan:
+                // - Tunjangan Jabatan = 20 % dari gapok
+                // - Tunjangan Kesehatan = 10 % dari gapok
+                // - Gaji Kotor = Gapok + Tunjab + Tunkes
+
+                let tunjanganjabatan = 0.2 * gapok;
+                let tunjangankesehatan = 0.1 * gapok;
+                let gajikotor = gapok + tunjanganjabatan + tunjangankesehatan;
+
+                // Gunakan ternary untuk menentukan agama Muslim dan Non Muslim
+                // baris ganjil Muslim , warna barisnya yellow
+                // baris genap Non Muslim , warna barisnya biru
+                // jika pegawai muslim dan gaji kotornya minimal 7jt, ada zakat profesi sebesar 2,5% dari gaji kotornya
+
+                let agama = ( p.akses >= 10 ) ? "Muslim" : "Non Muslim";
+                let warna = ( p.akses >= 10 ) ? "Yellow" : "Blue";
+                let zakatprofesi = ( gajikotor >= 7000000, p.akses >= 15) ? gajikotor * 0.025 : 0;
+               
+                // Take Home Pay = Gaji Kotor - Zakat Profesi
+                // cetak menggunakan table html
+                // Upload ke github dan copy link ke LMS
+
+                let takehomepay = gajikotor - zakatprofesi;
+
+                document.write(`<tr bgcolor="${warna}">
+                                <td> ${no++} </td>
+                                <td> ${p.nama} </td>
+                                <td> ${jabatan} </td>
+                                <td> ${agama} </td>
+                                <td> ${gapok} </td>
+                                <td> ${tunjanganjabatan} </td>
+                                <td> ${tunjangankesehatan} </td>
+                                <td> ${gajikotor} </td>
+                                <td> ${zakatprofesi} </td>
+                                <td> ${takehomepay} </td>
+                                </tr>`);
+            }
+
+        </script>
+    </tbody>
+</table>
