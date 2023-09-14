@@ -1,0 +1,95 @@
+<!-- Tugas JavaScript
+
+==================
+
+Buatlah form Toko Online untuk pelanggan yg ingin membeli produk dengan element form:
+1. Inputan nama pelanggan (name = nama )
+2. Select Option Produk, gunakan struktur kendali switch case untuk menentukan harga produk:
+   TV 2jt, AC 3jt, Kulkas 4jt (name = produk) gunakan looping for u/ data produk
+3. Inputan banyak item  produk dibeli (name = jumlah)
+4. Tombol Beli (name = proses)
+
+Tampilkan Populasi Data Berbentuk alert JavaScript dengan mengasosiasikan fungsi (nama fungsi transaksi ) dan event handler onclick:
+1. Nama Pelanggan
+2. Produk yg dibeli
+3. Harga Satuan
+4. Jumlah Item Produk yg dibeli
+5. Harga Kotor = Harga Satuan dikali Jumlah item produk yg dibeli
+6. Diskon dengan multiple IF dengan ketentuan:
+   - Jika beli Kulkas minimal 3 buah, diskon 30% dari Harga Kotor
+   - Jika beli AC minimal 3 buah, diskon 20% dari Harga Kotor
+   - Selain itu semua pelanggan dapat diskon 10% dari Harga Kotor
+7. Pajak Pertambahan Nilai (PPN) ditanggung pembeli , 10% dari Harga Kotor - Diskon
+8. Harga Bayar = (Harga Kotor - Diskon) + PPN
+
+
+masukan semua source code ke github dan Copy link ke LMS -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tugas pertemuan 4</title>
+    </head>
+    <body>
+        <form id="data">
+            <table style="width: 100%; background-color: greenyellow; border: 1px solid; text-align: center;">
+                <tr>
+                    <th colspan="2">Tokonya online gess</th>
+                </tr>
+
+                <tr>
+                    <td><label for="">Nama</label></td>
+                    <td><input type="text" name="nama" placeholder="Masukan Nama Pelanggan "></td>
+                </tr>
+
+                <tr>
+                    <td><label for="">Produk Lokal</label></td>
+                    <div name="produk">Produk Lokal</div>
+                </tr>
+
+                <tr>
+                    <td><label for="">Jumlah Produknya</label></td>
+                    <td><input type="text" name="jumlah" placeholder="Masukan jumlah produk "></td>
+                </tr>
+
+                <tr>
+                    <th colspan="2"><button type="button" onclick="proses()">Beli</button></th>
+                </tr>
+            </table>
+        </form>
+        <p id="hasil"></p>
+        <script src="js/datanya.js"></script>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- <tr>
+                    <td><label for="">Harga Produk Lokal</label></td>
+                    <td>
+                        <select name="harga">
+                            <select value="">Pilihannya Produknya</option>
+                            <select value="1">TV</option>
+                            <select value="2">AC</option>
+                            <select value="3">Kulkas</option>
+                            <select value="4">Dispenser</option>
+                            <select value="5">Blender</option>
+                          </select>
+                    </td>
+                </tr> -->
