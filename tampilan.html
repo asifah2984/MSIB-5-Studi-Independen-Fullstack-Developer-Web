@@ -1,0 +1,64 @@
+<!-- Buatlah Class Gempa dengan member class:
+1. variabel: lokasi, skala
+
+2. konstruktor: lokasi, skala
+
+3. Buatlah fungsi dampak() dengan ketentuan sebagai berikut:
+   - Jika skala 0 - 2, dampaknya tidak terasa
+   - Jika skala > 2 - 4, dampaknya bangunan retak-retak
+   - Jika skala > 4 - 6, dampaknya bangunan roboh
+   - Jika skala > 6, dampaknya bangunan roboh dan berpotensi tsunami
+
+4. Fungsi dampak() akan mencetak populasi data:
+   - Lokasi Gempa:
+   - Skala:
+   - Dampak:
+
+Buatlah Objectnya dengan dari Class dengan ketentuan sebagai berikut:
+
+1. Ciptakan 5 informasi Gempa hari ini dari berbagai penjuru dunia 
+   (instance object dengan beragam skala gempa)
+2. Gunakan fungsi dampak() untuk mencetak ke-5 info gempa di atas   
+
+upload source ke github dan copy linknya ke LMS -->
+
+<script>
+    class gempa{
+        constructor(lokasi, skala){
+            this.tempat = lokasi;
+            this.no = skala;
+        }
+        dampak(skala){
+            if(this.no >= 6) this.potensi = "dampaknya bangunan roboh dan berpotensi tsunami";
+            else if (this.no >= 4 && this.no < 6) this.potensi = "dampaknya bangunan roboh";
+            else if (this.no >= 2 && this.no < 4) this.potensi = "dampaknya bangunan retak-retak";
+            else if (this.no >= 0 && this.no < 2) this.potensi = "dampaknya tidak terasa";
+            else this.potensi = " ";
+        }
+        mencetak(){
+            document.write('Lokasi Gempa : ', this.tempat);
+            document.write('<br> Skala : ', this.no);
+            document.write("<br> Dampak : ", this.potensi);
+            document.write('<br> ----- ----- ----- <br>');
+        }
+    }
+
+    let n1 = new gempa ('Indonesia', 1, " ");
+    let n2 = new gempa ('thailand', 3, " ");
+    let n3 = new gempa ('Malaysia', 5, " ");
+    let n4 = new gempa ('Inggris', 7, " ");
+    let n5 = new gempa ('Singapura', 2, " ");
+
+    n1.dampak();
+    n2.dampak();
+    n3.dampak();
+    n4.dampak();
+    n5.dampak();
+
+    n1.mencetak();
+    n2.mencetak();
+    n3.mencetak();
+    n4.mencetak();
+    n5.mencetak();
+
+</script>
