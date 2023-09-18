@@ -1,0 +1,21 @@
+h2{
+    text-align: center;
+    margin: 100px 50px;
+}
+body{
+    text-align: center;
+    margin: auto;
+    background-color: grey;
+}
+#piliha, #pilihb, #pilihc {
+    display: inline-block;
+    margin: auto;
+    width: 30%;
+    color:darkblue;
+    border: 3px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    background-color: red;
+    height: 200px;
+    cursor: pointer;
+}

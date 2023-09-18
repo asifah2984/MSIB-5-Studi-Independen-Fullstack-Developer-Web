@@ -1,0 +1,67 @@
+
+<!-- Buatlah program sederhana menggunakan jquery untuk menampilkan data, 
+ketika event mouse mengklik salah satu pilihan bidang berdasarkan masing-masing judul
+
+profile => menampilkan profile pribadi
+
+Moto hidup => menampilkan moto hidup dan alasan
+
+keahlian => menampilkan keahlian dan pengalaman 
+
+
+
+masukan kodingan tersebut ke github dan copy link ke LMS -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="css/style1.css">
+    
+    <script type="text/javascript">
+        $("document").ready(function(){
+            $("div").mouseout(function(){
+                $(this).css({
+                    background: "green"
+                });
+            });
+            $("div").mouseover(function(){
+                $(this).css({
+                    background: "yellow"
+                });
+            });
+            $("#piliha").mouseover(function(){
+                $(this).css({
+                    background: "url('images/fotoa.jpg')"
+                    
+                });
+            });
+            $("#pilihb").mouseover(function(){
+                $(this).css({
+                    background: "url('images/fotob.jpg')"
+                });
+            });
+            $("#pilihc").mouseover(function(){
+                $(this).css({
+                    background: "url('images/fotoc.jpg')"
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+    
+    <h2>Letakan kursor mouse ke masing-masing judul</h2>
+
+    <div id="piliha">Profile</div>
+    <div id="pilihb">Moto Hidup</div>
+    <div id="pilihc">Keahlian</div>
+    <div class="bagiana">Jason Statham is an English actor. He is known for portraying characters in various action-thriller films who are typically tough, hardboiled, gritty, or violent. Statham began practising Chinese martial arts, kickboxing, and karate recreationally in his youth while working at local market stalls. </div>
+    <div class="bagianb">Tidak ada batasan pada pikiran kecuali apa yang kita tetapkan.</div>
+    <div class="bagianc">On top of his martial art skills in kickboxing, wing chun, karate, and Brazilian jiu-jitsu, he's also been weightlifting and doing calisthenics for years, so he's likely much stronger with better conditioning and cardiovascular endurance than opponents of a similar age and weight.</div>
+</body>
+</html>
