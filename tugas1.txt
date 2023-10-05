@@ -1,0 +1,55 @@
+Capture-lah perintah2 SQL dan beri komentar pada perintah queri berikut ini:
+
+// - masuk ke ruang DB melalui CMD
+a. cd \xampp\mysql\bin
+b. mysql -u root -p
+
+// - tampilkan database yang sudah dibuat
+a. SHOW DATABASES;
+
+// - buat database baru : dbpegawai
+a. CREATE DATABASE dbpegawai;
+
+// - masuk ke ruang database dbpegawai
+a. USE dbpegawai;
+
+// - tampilkan tabel2 yang sudah ada di dbpegawai
+a. SHOW TABLES;
+
+//  - buat tabel pegawai field-field:
+  1. id int primary key
+  2. nip char dengan constraint: wajib diisi, tidak boleh sama & 5 karakter
+  3. nama varchar dengan constraint: wajib diisi dan maksimal 30 karakter
+  4. gender enum('L','P') dengan constraint: wajib diisi
+  5. umur int dengan constraint: wajib diisi
+  6. berat_badan float
+a. CREATE TABLE pegawaitoko (
+    id INT PRIMARY KEY,
+    nip CHAR(5) NOT NULL UNIQUE,
+    nama VARCHAR(30) NOT NULL,
+    gender ENUM('L','P') NOT NULL,
+    umur INT NOT NULL,
+    berat_badan FLOAT 
+    );
+
+// - tampilkan database yang sudah dibuat
+a. SHOW DATABASES;
+
+// - lihat deskripsi tabel pegawai yang sudah dibuat
+a. DESC pegawaitoko;
+
+
+
+SHOW DATABASES;
+CREATE DATABASE dbpegawai;
+USE dbpegawai;
+SHOW TABLES;
+CREATE TABLE pegawaitoko ( id INT PRIMARY KEY, nip CHAR(5) NOT NULL UNIQUE, nama VARCHAR(30) NOT NULL, gender ENUM('L','P') NOT NULL, umur INT NOT NULL, berat_badan FLOAT );
+SELECT * FROM `pegawaitoko`
+SHOW DATABASES;
+SHOW DATABASES;
+DESC pegawaitoko;
+
+
+
+upload ke github dalam bentuk TXT  lalu copy link ke LMS
