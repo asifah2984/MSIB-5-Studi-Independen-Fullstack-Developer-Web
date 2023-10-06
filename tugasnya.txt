@@ -1,0 +1,101 @@
+Buatlah table sebagai berikut 
+
+CREATE DATABASE tugasmsib2;
+
+// 1. table pembelian yang references ke produk dengan rincian kolom sebagai berikut:
+// - tanggal
+// - nomor 
+// - produk_id
+// - jumlah
+// - harga 
+// - vendor_id
+
+CREATE TABLE pembelian (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    tanggal DATE NOT NULL,
+    nomor VARCHAR(30) NOT NULL,
+    produk_id INT NOT NULL REFERENCES produk(id),
+    jumlah INT NOT NULL,
+    harga float NOT NULL,
+    vendor_id INT NOT NULL REFERENCES vendor(id)
+);
+
+// Isi data tabel pembelian
+
+INSERT INTO pembelian (tanggal, nomor, produk_id, jumlah, harga, vendor_id) 
+VALUES ('2023-01-01', 'P0A1', 1, 2, 20000, 1),
+    ('2023-02-02', 'P0B2', 2, 4, 40000, 2),
+    ('2023-03-03', 'P0C3', 3, 6, 60000, 3),
+    ('2023-04-04', 'P0D4', 4, 8, 70000, 4),
+    ('2023-05-05', 'P0E5', 5, 10, 80000, 5);
+
+
+// 2. table vendor yang references ke table pembelian, dengan rincian kolom sebagai berikut:
+// - nomor
+// - nama
+// - kota
+// - kontak
+
+CREATE TABLE vendor (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nomor VARCHAR(30) NOT NULL,
+    nama VARCHAR(30) NOT NULL,
+    kota VARCHAR(30) NOT NULL,
+    kontak VARCHAR(30) NOT NULL
+);
+
+// Isi data tabel vendor
+
+INSERT INTO vendor (nomor, nama, kota, kontak) 
+VALUES('V0A1', 'Vendor A', 'Jakarta', 'Ari'),
+    ('V0B2', 'Vendor B', 'Bandung', 'Adi'),
+    ('V0C3', 'Vendor C', 'Yogyakarta', 'Aji'),
+    ('V0D4', 'Vendor D', 'Solo', 'Ali'),
+    ('V0E5', 'Vendor E', 'Panorogo', 'Ani');
+
+// Console
+
+CREATE DATABASE pembelian;
+CREATE TABLE pembelian ( id INT PRIMARY KEY AUTO_INCREMENT, tanggal DATE NOT NULL, nomor VARCHAR(30) NOT NULL, produk_id INT NOT NULL REFERENCES produk(id), jumlah INT NOT NULL, harga DECIMAL(10, 2) NOT NULL, vendor_id INT NOT NULL REFERENCES vendor(id) );
+SELECT * FROM `pembelian`
+SELECT * FROM `pembelian`
+DROP DATABASE pembelian;
+CREATE DATABASE pembelian;
+CREATE TABLE pembelian ( id INT PRIMARY KEY AUTO_INCREMENT, tanggal DATE NOT NULL, nomor VARCHAR(30) NOT NULL, produk_id INT NOT NULL REFERENCES produk(id), jumlah INT NOT NULL, harga float NOT NULL, vendor_id INT NOT NULL REFERENCES vendor(id) );
+INSERT INTO pembelian (tanggal, nomor, produk_id, jumlah, harga, vendor_id) VALUES ('Senin, 01-01-2023', 'P0A1', 1, 2, 20000, 1), ('Selasa, 01-02-2023', 'P0B2', 2, 4, 40000, 2), ('Rabu, 01-03-2023', 'P0C3', 3, 6, 60000, 3), ('Kamis, 01-04-2023', 'P0D4', 4, 8, 70000, 4), ('Jumat, 01-05-2023', 'P0E5', 5, 10, 80000, 5);
+SELECT * FROM `pembelian`
+SELECT * FROM `pembelian` ORDER BY `pembelian`.`tanggal` DESC
+SELECT * FROM `pembelian` ORDER BY `pembelian`.`tanggal` ASC
+Buka Kueri ulang Ubah Jelaskan Profil Bookmarks Basis data : pembelian Waktu eksekusi kueri : 21:58:5
+SELECT * FROM `pembelian` ORDER BY `pembelian`.`tanggal` DESC
+SELECT * FROM `pembelian`
+SELECT * FROM `pembelian`
+SELECT * FROM `pembelian`
+SELECT * FROM `pembelian`
+INSERT INTO pembelian (tanggal, nomor, produk_id, jumlah, harga, vendor_id) VALUES ('01-01-2023', 'P0A1', 1, 2, 20000, 1), ('01-02-2023', 'P0B2', 2, 4, 40000, 2), ('01-03-2023', 'P0C3', 3, 6, 60000, 3), ('01-04-2023', 'P0D4', 4, 8, 70000, 4), ('01-05-2023', 'P0E5', 5, 10, 80000, 5);
+SELECT * FROM `pembelian`
+DELETE FROM `pembelian` WHERE `pembelian`.`id` = 1
+DELETE FROM `pembelian` WHERE `pembelian`.`id` = 2
+DELETE FROM `pembelian` WHERE `pembelian`.`id` = 3
+DELETE FROM `pembelian` WHERE `pembelian`.`id` = 4
+INSERT INTO pembelian (tanggal, nomor, produk_id, jumlah, harga, vendor_id) VALUES ('2023-01-01', 'P0A1', 1, 2, 20000, 1), ('2023-02-02', 'P0B2', 2, 4, 40000, 2), ('2023-03-03', 'P0C3', 3, 6, 60000, 3), ('2023-04-04', 'P0D4', 4, 8, 70000, 4), ('2023-05-05', 'P0E5', 5, 10, 80000, 5);
+SELECT * FROM `pembelian`
+DELETE FROM `pembelian` WHERE `pembelian`.`id` = 5
+CREATE TABLE vendor ( id INT PRIMARY KEY AUTO_INCREMENT, nomor VARCHAR(30) NOT NULL, nama VARCHAR(30) NOT NULL, kota VARCHAR(30) NOT NULL, kontak VARCHAR(30) NOT NULL );
+SELECT * FROM `vendor`
+INSERT INTO vendor (nomor, nama, kota, kontak) VALUES('V0A1', 'Vendor A', 'Jakarta', 'Ari'), ('V0B2', 'Vendor B', 'Bandung', 'Adi'), ('V0C3', 'Vendor C', 'Yogyakarta', 'Aji'), ('V0D4', 'Vendor D', 'Solo', 'Ali'), ('V0E5', 'Vendor E', 'Panorogo', 'Ani');
+SELECT * FROM `vendor`
+DROP DATABASE pembelian;
+CREATE DATABASE tugasmsib2;
+CREATE TABLE pembelian ( id INT PRIMARY KEY AUTO_INCREMENT, tanggal DATE NOT NULL, nomor VARCHAR(30) NOT NULL, produk_id INT NOT NULL REFERENCES produk(id), jumlah INT NOT NULL, harga float NOT NULL, vendor_id INT NOT NULL REFERENCES vendor(id) );
+SELECT * FROM `pembelian`
+INSERT INTO pembelian (tanggal, nomor, produk_id, jumlah, harga, vendor_id) VALUES ('2023-01-01', 'P0A1', 1, 2, 20000, 1), ('2023-02-02', 'P0B2', 2, 4, 40000, 2), ('2023-03-03', 'P0C3', 3, 6, 60000, 3), ('2023-04-04', 'P0D4', 4, 8, 70000, 4), ('2023-05-05', 'P0E5', 5, 10, 80000, 5);
+SELECT * FROM `pembelian`
+CREATE TABLE vendor ( id INT PRIMARY KEY AUTO_INCREMENT, nomor VARCHAR(30) NOT NULL, nama VARCHAR(30) NOT NULL, kota VARCHAR(30) NOT NULL, kontak VARCHAR(30) NOT NULL );
+SELECT * FROM `vendor`
+INSERT INTO vendor (nomor, nama, kota, kontak) VALUES('V0A1', 'Vendor A', 'Jakarta', 'Ari'), ('V0B2', 'Vendor B', 'Bandung', 'Adi'), ('V0C3', 'Vendor C', 'Yogyakarta', 'Aji'), ('V0D4', 'Vendor D', 'Solo', 'Ali'), ('V0E5', 'Vendor E', 'Panorogo', 'Ani');
+SELECT * FROM `vendor`
+
+isi 2 tabel berikut minimal 5 data
+
+upload source ke github dan copy link ke LMS
