@@ -1,0 +1,93 @@
+
+tugas 1 
+
+Lanjutkan soal yang ada di worksheet
+
+Tugas 2 
+
+Ubah table berikut menjadi 1 NF dan 2 NF
+
+upload semua ke github dan copy link ke LMS
+
+SOAL 3.2
+
+// 1.	Berapa jumlah pelanggan yang tahun lahirnya 1998
+SELECT COUNT(tgl_lahir) FROM pelanggan WHERE YEAR(tgl_lahir) = 1998;
+
+// 2.	Berapa jumlah pelanggan perempuan yang tempat lahirnya di Jakarta
+SELECT COUNT(jk) FROM pelanggan WHERE tmp_lahir='Jakarta' AND jk = 'P';
+
+// 3.	Berapa jumlah total stok semua produk yang harga jualnya dibawah 10rb
+SELECT SUM(stok) FROM produk WHERE harga_jual < 10000000; 
+
+// 4.	Ada berapa produk yang mempunyai kode awal K
+SELECT COUNT(kode) FROM produk WHERE kode LIKE 'K%';
+
+// 5.	Berapa harga jual rata-rata produk yang diatas 1jt
+SELECT AVG(harga_jual) FROM produk WHERE harga_jual > 1000000;
+
+// 6.	Tampilkan jumlah stok yang paling besar
+SELECT * FROM produk WHERE stok = (SELECT MAX(stok) FROM produk);
+
+// 7.	Ada berapa produk yang stoknya kurang dari minimal stok
+SELECT COUNT(stok) FROM produk WHERE stok < min_stok;
+
+// 8.	Berapa total asset dari keseluruhan produk
+SELECT SUM(stok * harga_jual) AS total_asset FROM produk;
+
+// SOAL 3.3
+
+// 1.	Tampilkan data produk : id, nama, stok dan informasi jika stok telah sampai batas minimal atau kurang dari minimum stok dengan informasi ‘segera belanja’ jika tidak ‘stok aman’.
+SELECT id, nama, stok,
+CASE
+WHEN stok > min_stok THEN 'Aman'
+ELSE 'Segera Belanja'
+END AS Informasi FROM produk;
+
+// 2.	Tampilkan data pelanggan: id, nama, umur dan kategori umur : jika umur < 17 → ‘muda’ , 17-55 → ‘Dewasa’, selainnya ‘Tua’
+// Catatan ke satu
+SELECT id, nama, umur,
+CASE
+WHEN umur < 17 THEN 'Muda'
+WHEN umur >= 17 AND umur <= 55 THEN 'Dewasa'
+ELSE 'Tua'
+END AS kategori_umur FROM pelanggan;
+
+// Catatan ke dua
+SELECT id, nama, tgl_lahir,
+CASE 2
+WHEN YEAR(NOW())-YEAR(tgl_lahir) < 17 THEN 'muda'
+WHEN YEAR(NOW())-YEAR(tgl_lahir) BETWEEN 17 AND 55 THEN 'Dewasa'
+ELSE 'Tua'
+END AS kategori_umur FROM pelanggan;
+
+// 3.	Tampilkan data produk: id, kode, nama, dan bonus untuk kode ‘TV01’ →’DVD Player’ , ‘K001’ → ‘Rice Cooker’ selain dari diatas ‘Tidak Ada’
+SELECT id, kode, nama,
+CASE
+WHEN kode = 'TV01' THEN 'DVD Player'
+WHEN kode = 'K001' THEN 'Rice Cooker'
+ELSE 'Tidak Ada'
+END AS bonus FROM produk;
+
+SOAL 3.4
+
+// 1.	Tampilkan data statistik jumlah tempat lahir pelanggan
+SELECT tmp_lahir, COUNT(tmp_lahir) AS jumlah_pelanggan FROM pelanggan GROUP BY tmp_lahir;
+
+// 2.	Tampilkan jumlah statistik produk berdasarkan jenis produk
+SELECT nama, COUNT(nama) AS jumlah_produk FROM produk GROUP BY nama;
+
+3.	Tampilkan data pelanggan yang usianya dibawah rata usia pelanggan //
+SELECT nama, (YEAR(NOW())-YEAR(tgl_lahir)) < AVG(YEAR(NOW())-YEAR(tgl_lahir))  AS umur FROM pelanggan;
+
+4.	Tampilkan data produk yang harganya diatas rata-rata harga produk //
+SELECT nama, harga_jual FROM produk WHERE harga_jual > (SELECT AVG(harga_jual) FROM produk);
+
+5.	Tampilkan data pelanggan yang memiliki kartu dimana iuran tahunan kartu diatas 90rb //
+SELECT nama, kartu FROM pelanggan WHERE kartu = 'Ada' AND iuran_kartu_tahunan > 90000;
+
+// 6.	Tampilkan statistik data produk dimana harga produknya dibawah rata-rata harga produk secara keseluruhan
+SELECT AVG(harga_jual) AS Rata_Rata_Harga, MAX(harga_jual) AS harga_tertinggi, MIN(harga_beli) AS harga_terendah FROM produk WHERE harga_jual < (SELECT AVG(harga_beli) FROM produk);
+
+7.	Tampilkan data pelanggan yang memiliki kartu dimana diskon kartu yang diberikan diatas 3% //
+SELECT nama, kartu, diskon_kartu FROM pelanggan WHERE kartu = 'Ada' AND diskon_kartu > 0.03;
