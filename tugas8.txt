@@ -1,0 +1,69 @@
+
+// SOAL 5.1
+
+// Buatlah view berdasarkan query yang menampilkan data berikut ini:
+
+// 1
+CREATE VIEW ...
+
+CREATE VIEW pesanan_pelanggan_kartu
+AS SELECT pesanan.id, pesanan.tanggal, pesanan. total, pelanggan.kode, pelanggan.nama, 
+kartu.nama as nama_kartu, kartu.diskon
+FROM pesanan INNER JOIN pelanggan ON pesanan.pelanggan_id = pelanggan.id
+INNER JOIN kartu ON pelanggan.kartu_id = kartu.id;
+Select * FROM pesanan_pelanggan_kartu
+
+// 2
+CREATE VIEW Pembelian_Produk_Vendor
+AS SELECT Pembelian.id, Pembelian.tanggal, pembelian.nomor, pembelian.jumlah, pembelian.harga,
+produk.nama AS nama_produk, vendor.nama AS nama_vendor, vendor.kontak
+FROM pembelian
+INNER JOIN produk ON pembelian.produk_id = produk.id
+INNER JOIN vendor ON pembelian.vendor_id = vendor.id;
+
+// 3
+CREATE VIEW pesanan_pelanggan_produk_Jenis_Produk_Pesanan_Items 
+AS SELECT pesanan.id, pesanan.tanggal, pesanan.total,
+pelanggan.nama AS nama_pelanggan,
+produk.kode, produk.nama AS nama_produk,
+jenis_produk.nama AS nama_jenis_produk,
+pesanan_items.qty, pesanan_items.harga_jual
+FROM pesanan
+INNER JOIN pelanggan ON pesanan.pelanggan_id = pelanggan.id
+INNER JOIN produk ON pesanan.produk_id = produk.id
+INNER JOIN jenis_produk ON pesanan.jenis_produk_id = jenis_produk.id
+INNER JOIN pesanan_items ON pesanan.pesanan_items_id = pesanan_items.id;
+
+// SOAL 5.2
+
+// 1.	Buatlah sebuah transaction dengan skenario-skenario statement sebagai berikut:
+
+START TRANSACTION ...
+
+// Mulai transaction
+START TRANSACTION;
+
+// Insert data produk sebanyak 3 record
+INSERT INTO produk (kode, nama, harga_beli, harga_jual, stok, min_stok, jenis_produk_id) 
+VALUES
+  ('KA01', 'Korek Api', 10000, 15000, 50, 10, 1),
+  ('KA02', 'Kipas Angin', 8000, 12000, 30, 5, 2),
+  ('G001', 'garpu', 150, 2000, 4000, 15, 1);
+
+// Update data stok salah satu produk
+UPDATE produk SET stok = 150 WHERE nama = 'Kipas';
+
+// Buat savepoint
+SAVEPOINT update_produk;
+
+// Hapus salah satu data pembayaran
+DELETE FROM pembayaran WHERE nama = 'Tunai';
+
+// Kembali ke savepoint
+ROLLBACK TO update_produk;
+
+// Update data iuran salah satu kartu
+UPDATE kartu SET iuran = 1000000 WHERE nama = 'Perunggu 1';
+
+// Akhiri transaction dengan commit
+COMMIT;
