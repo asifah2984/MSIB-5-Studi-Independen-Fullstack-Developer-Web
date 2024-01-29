@@ -1,0 +1,17 @@
+body{
+    background-color: greenyellow;
+}
+
+thead , tfoot{
+    background-color: green;
+    color: whitesmoke;
+    font-family: Harvard style, Helvetica, sans-serif;
+    font-size: 12pt;
+}
+
+div#menu {
+    text-align: center;
+    font-family: 'Harvard style', Courier, monospace;
+    padding: 14x;
+    color: gray;
+}

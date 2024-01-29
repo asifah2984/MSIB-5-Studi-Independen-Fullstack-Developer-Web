@@ -1,0 +1,45 @@
+/* ini adalah file css pertama */
+/* menggunakan selector tag */
+p {
+    color: yellowgreen;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+}
+body{
+    background-color: khaki;
+    /* ini adalah pemanggilan image diadalam background*/
+    background-image: url("../images/love.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0cm 3cm;
+}
+/* grouping */
+fieldset, legend {
+    border: rebeccapurple groove 5px;
+    border-radius: 10px;
+}
+legend{
+    padding: 10px;
+    background-color: aqua;
+    color: azure;
+    font-weight: bold;
+    font-size: 14pt;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 5px;
+}
+/* ini adalah contoh selector id */
+/* contoh 1 dikhususkan untuk tag div */
+div#menu {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+}
+/* contoh 2 dapat masuk ke semua tag asalkan didalam tag */
+/* #menu {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+} */
