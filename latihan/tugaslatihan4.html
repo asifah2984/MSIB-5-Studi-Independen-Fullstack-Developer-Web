@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Latihan 4 form</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Link</legend>
+      <ul type="disc">
+        <li>
+          <a href="latihan1.html"" target="_blank">Home</a>
+        </li>
+        <li>
+          <a href="https://www.detik.com/" target="_blank">Biodata</a>
+        </li>
+      </ul>
+      <table border="1" width="50%" cellpadding="10">
+        <tr align="center" bgcolor="gray">
+          <td colspan="3">Latihan Form</td>
+          <!-- <td>2</td>
+               <td>3</td> -->
+        </tr>
+        <td>
+          <label>Nama</label>
+        </td>
+        <td>
+          <input
+            type="text"
+            name="nama"
+            value=""
+            placeholder="isi nama anda disini"
+            size="20"
+            maxlength="30"
+          />
+        </td>
+        <tr>
+          <td>
+            <label>Password</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="sandi"
+              value=""
+              placeholder="isi password anda disini"
+              size="20"
+              maxlength="30"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Gender</label>
+          </td>
+          <td>
+            <input type="radio" name="jk" value="L" />Laki-laki<br />
+            <input type="radio" name="jk" value="P" />Perempuan<br />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Hobby</label>
+          </td>
+          <td>
+            <input type="checkbox" name="hobby" value="hobby1" />Futsal<br />
+            <input type="checkbox" name="hobby" value="hobby2" />Renang<br />
+            <input type="checkbox" name="hobby" value="hobby3" />Ice Kating<br />
+            <input type="checkbox" name="hobby" value="hobby3" />Mendaki<br />
+            <input type="checkbox" name="hobby" value="hobby3" />Volly<br />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Pendidikan Terakhir</label>
+          </td>
+          <td>
+            <select name="pilih">
+              <option value="">Pilih Pendidikan</option>
+              <option value="1">TK</option>
+              <option value="2">SD</option>
+              <option value="3">SMP</option>
+              <option value="4">SMA</option>
+              <option value="4">SARJANA</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Komentar</label>
+          </td>
+          <td>
+            <textarea name="komentar" rows="10" cols="50"></textarea>
+          </td>
+        </tr>
+
+        <tr align="center" bgcolor="gray">
+          <td colspan="3">
+            <input type="submit" name="proses" value="Simpan" />
+            <input type="reset" name="unproses" value="Batal" />
+          </td>
+          <!-- <td>2</td>
+                 <td>3</td> -->
+        </tr>
+      </table>
+    </fieldset>
+  </body>
+</html>
