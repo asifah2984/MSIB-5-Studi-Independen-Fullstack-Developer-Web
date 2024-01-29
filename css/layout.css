@@ -1,0 +1,52 @@
+/* css universal */
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    /* background-color: azure; */
+    background-image: url("../images/headera.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    text-align: center;
+    color: chocolate;
+}
+.navbar {
+    overflow: hidden;
+    background-color: greenyellow;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: rebeccapurple;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    background-color: aqua;
+    color: blanchedalmond;
+}
+.column {
+    float: left;
+    padding: 10px;
+}
+.column.side {
+    width: 25%;
+}
+.column.middle {
+    width: 50%;
+}
+/* clear float dan memisahkan dari column sebelumnya */
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Membersihkan float sebelumnya */
+.footer {
+    background-color: aquamarine;
+    padding: 10px;
+    text-align: center;
+}
