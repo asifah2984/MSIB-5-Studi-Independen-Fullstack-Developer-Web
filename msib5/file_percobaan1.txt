@@ -1,0 +1,49 @@
+file ini adalah file yang dibuat didalam komputer
+yang kemudian akan diupload kedalam github
+menggunakan perintah :
+git add 			-> untuk menambahkan data atau file
+git commit -m 			-> untuk menambahkan tanda atau 
+git push -u origin master 	-> untuk memastikan file masuk kedalam reposit
+git config --global user.name	-> untuk memasukkan settingan username kedalam git kita
+git config --global user.email	-> ------------""------------ email kedalam git kita
+git init 			-> digunakan, jika ingin komputer dengan github terhubung 
+					dan biasanya digunakan ketika akan melakukan remote
+
+
+
+
+
+
+
+
+
+
+
+
+git add . 			-> untuk 1 file
+git add file_pecobaan1.txt
+git commit -m "ini adalah file percobaan 1 lokal"
+git push -u origin master
+
+git init -> 
+
+git config --global user.email "asifahmad2984@gmail.com"
+
+git config --global user.name "asifah2984"
+
+git branch
+
+git branch ahmad
+
+git checkout ahmad
+
+git branch
+
+
+
+
+
+
+
+
+

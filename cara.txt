@@ -1,0 +1,134 @@
+
+git config --list
+
+git clone ___alamat___
+
+cd msib/
+
+git add . 		| Untuk semua file masuk
+
+git git commit -m "ini adalah file percobaan 1 lokal"
+
+git push -u origin master
+
+------------------------------------------------------------
+
+git init
+
+git config --global user.email "hai@gmail.com"
+
+git config --global username "hai"
+
+------------------------------------------------------------
+
+git branch
+
+git branch arip
+
+git branch
+
+git checkout arip
+
+git branch
+
+git checkout master
+
+git checkout arip
+
+git add file
+
+git add ini\ file\ arip.txt
+
+git commit -m "ini adalah file dari branch arip
+
+git push -u origin arip
+
+git checkout master
+
+git checkout arip
+
+git checkout master
+
+git checkout arip
+
+git checkout master
+
+git merge arip
+
+git push
+
+------------------------------------------------------------
+
+git pull -u origin master --allow-unrelated-histories
+
+git pull origin master --allow-unrelated-histories
+
+git push
+
+------------------------------------------------------------
+{{{Upload nang git hub cok}}}
+
+git init
+
+git remote add origin https://github.com/asifah2984/Tugaskelompokmsib5.git
+
+git remote
+
+git pull origin master
+
+git branch Ahmad Asif Iltizam
+
+git branch
+
+git checkout lat_HTMLdanCSS
+
+git add .
+
+git commit -m "Percobaannya project"
+
+git push -u origin lat_HTMLdanCSS
+
+------------------------------------------------------------
+{{{Revisi nang github Cok}}}
+
+git add .
+
+git status
+
+git commit -m "Update latihan"
+
+git push -u origin lat_HTMLdanCSS
+
+------------------------------------------------------------
+{{{Peserta masukkan branch}}}
+
+git init
+
+git remote add origin http:___
+
+git pull origin master
+
+git branch (nama)
+
+git checkout (nama)
+
+git add .
+
+git commit -m "ini file (nama)"
+
+git push -u origin (nama)
+
+
+git push -u origin master
+
+git checkout master
+
+git checkout (nama)
+
+git push -u origin (nama)
+
+------------------------------------------------------------
+
+git checkout -b lyrasalsa
+
+
