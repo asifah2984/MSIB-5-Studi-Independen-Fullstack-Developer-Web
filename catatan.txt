@@ -1,0 +1,18 @@
+
+cara menampilkan di web 
+
+http://localhost/laravelSIB5/public/
+
+cd \xampp\htdocs\laravelSIB5\pertemuan3\backup
+
+php artisan serve
+
+http://127.0.0.1:8000
+
+http://localhost:8000
+
+php artisan make:controller LihatNilaiController
+
+php artisan make:controller DashboardController
+
+php artisan make:controller PagenotController
