@@ -1,0 +1,46 @@
+
+cara menampilkan di web 
+
+http://localhost/laravelSIB5/public/
+
+cd \xampp\htdocs\laravelSIB5\pertemuan3\backup
+
+php artisan serve
+
+http://127.0.0.1:8000
+
+http://localhost:8000
+
+php artisan make:controller LihatNilaiController
+
+php artisan make:controller DashboardController
+
+php artisan make:controller PagenotController
+
+cd \xampp\mysql
+
+cd bin
+
+mysql -u root -p
+
+CREATE DATABASE code_pegawai;
+
+use code_pegawai;
+
+php artisan make:migration create_staff_table
+
+php artisan migrate
+
+show tables;
+
+desc staff;
+
+= php artisan cache:clear
+= php artisan migrate:refresh
+= php artisan config:clear
+
+php artisan make:seeder StaffSeeder
+
+php artisan db:seed --class=StaffSeeder
+
+SELECT * FROM staff;
