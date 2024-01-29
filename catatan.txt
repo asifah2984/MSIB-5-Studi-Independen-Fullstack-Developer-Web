@@ -1,0 +1,79 @@
+
+cara menampilkan di web 
+
+http://localhost/laravelSIB5/public/
+
+cd \xampp\htdocs\laravelSIB5\pertemuan10\backup
+
+php artisan serve
+
+http://127.0.0.1:8000
+
+http://localhost:8000
+
+php artisan make:controller LihatNilaiController
+
+php artisan make:controller DashboardController
+
+php artisan make:controller PagenotController
+
+cd \xampp\mysql
+
+cd bin
+
+mysql -u root -p
+
+CREATE DATABASE code_pegawai;
+
+use code_pegawai;
+
+php artisan make:migration create_staff_table
+
+php artisan migrate
+
+show tables;
+
+desc staff;
+
+= php artisan cache:clear
+= php artisan migrate:refresh
+= php artisan config:clear
+
+php artisan make:seeder StaffSeeder
+
+php artisan db:seed --class=StaffSeeder
+
+SELECT * FROM staff;
+
+php artisan make:model Jenis_produk
+
+php artisan make:model Kartu
+
+php artisan make:model Produk
+
+php artisan make:model Pelanggan
+
+php artisan make:controller JenisProdukController --resource
+
+php artisan make:controller KartuController --resource
+
+php artisan make:controller PelangganController --resource
+
+php artisan make:controller ProdukController --resource
+
+php artisan key:generate
+
+https://startbootstrap.com/template/shop-item
+
+ALTER TABLE `produk` ADD `foto` VARCHAR(255) NULL DEFAULT NULL AFTER `min_stok`, ADD `deskripsi` TEXT NULL DEFAULT NULL AFTER `foto`;
+
+
+
+
+
+
+
+
+
+
+
