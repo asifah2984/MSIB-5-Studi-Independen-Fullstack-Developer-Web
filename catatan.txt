@@ -1,0 +1,131 @@
+
+cara menampilkan di web 
+
+http://localhost/laravelSIB5/public/
+
+cd \xampp\htdocs\laravelSIB5\Pertemuan21\backup
+
+php artisan serve
+
+http://127.0.0.1:8000
+
+http://localhost:8000
+
+php artisan make:controller LihatNilaiController
+
+php artisan make:controller DashboardController
+
+php artisan make:controller PagenotController
+
+cd \xampp\mysql
+
+cd bin
+
+mysql -u root -p
+
+CREATE DATABASE code_pegawai;
+
+use code_pegawai;
+
+php artisan make:migration create_staff_table
+
+php artisan migrate
+
+show tables;
+
+desc staff;
+
+= php artisan cache:clear
+= php artisan migrate:refresh
+= php artisan config:clear
+
+php artisan make:seeder StaffSeeder
+
+php artisan db:seed --class=StaffSeeder
+
+SELECT * FROM staff;
+
+php artisan make:model Jenis_produk
+
+php artisan make:model Kartu
+
+php artisan make:model Produk
+
+php artisan make:model Pelanggan
+
+php artisan make:controller JenisProdukController --resource
+
+php artisan make:controller KartuController --resource
+
+php artisan make:controller PelangganController --resource
+
+php artisan make:controller ProdukController --resource
+
+php artisan key:generate
+
+https://startbootstrap.com/template/shop-item
+
+ALTER TABLE `produk` ADD `foto` VARCHAR(255) NULL DEFAULT NULL AFTER `min_stok`, ADD `deskripsi` TEXT NULL DEFAULT NULL AFTER `foto`;
+
+https://github.com/realrashid/sweet-alert
+
+https://realrashid.github.io/sweet-alert/install
+
+php artisan sweetalert:publish
+
+https://datatables.net/extensions/buttons/examples/initialisation/export
+
+https://github.com/barryvdh/laravel-dompdf
+
+https://stackoverflow.com/q/40309620, mungkin bisa buat refrence temen" yg composernya ada warningnya
+
+https://www.anaktekno.com/2022/04/contoh-cv-menggunakan-html.html
+
+https://docs.laravel-excel.com/3.1/getting-started/installation.html
+
+saya check lewat CLI ada beberapa yg ketemu https://stackoverflow.com/q/478844
+
+///// extension=gd nya blm di eneble pak
+composer require psr/simple-cache:^1.0 maatwebsite/excel
+
+php artisan make:export ProdukExport --model=Produk
+
+https://docs.laravel-excel.com/3.1/getting-started/
+
+php artisan make:import ProdukImport --model=Produk
+
+https://getbootstrap.com/docs/4.0/components/modal/
+
+node --version
+
+npm --version
+
+https://nodejs.org/en/
+
+https://stackoverflow.com/a/65892735
+kalo dari sof minimal diatas v14
+node versionnya pak
+
+composer require laravel/ui
+
+php artisan ui bootstrap --auth
+
+npm install && npm run dev
+
+php artisan migrate
+
+npm run dev
+
+php artisan make:middleware Peran
+
+https://themewagon.com/
+
+https://themewagon.com/themes/free-bootstrap-4-html5-responsive-ecommerce-website-template-minishop/
+
+https://themewagon.com/themes/furni-online-store/
+
+php artisan make:controller BerandaController
+
+php artisan make:controller UserController
+
+php artisan storage:link
